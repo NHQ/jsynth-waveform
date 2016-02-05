@@ -1,0 +1,48 @@
+{
+  "name": "jsynth-waveform",
+  "version": "1.1.0",
+  "description": "draws waveforms to canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitub.com:NHQ/jsynth-waveform.git"
+  },
+  "keywords": [
+    "waveforms",
+    "web",
+    "audio",
+    "wave",
+    "form",
+    "audio",
+    "visualization"
+  ],
+  "author": {
+    "name": "johnnyscript.us"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "readme": "# jsynth-waveform\n\nThis javascript module makes audio visual. It draws to an html canvas context.\n\n``\nnpm install jsynth-waveform\n```\n\n## To Use\n\nPass waveformer a param object. You must pass at least a #canvas element and either an HTML webAudio #source node, such as returned by [jsynth-file-sample](https://github.com/NHQ/jsynth-file-sample), or a single dimension #buffer, typically a Float32Array.\n\nOptionally you can also pass #in and #out offset times (in samples), and the #chunkSize. The #chunkSize sets the window of averages used to create the waveform. Using #chunkSize with #in and #out gives you complete control to animate any window of the buffer, down to any number of samples. The default is to draw the whole thing. There are some other options as well:\n\nParameter options:\n#buffer //  a raw audio buffer, or\n#source // an HTML webAudio sourceBufferNode\n#canvas // an HTML canvas element\n#chunkSize // the resolution of the frames. Integer in samples. Defaults to Math.floor(48000 / 360);\n#in // the begin offset in the audio buffer to draw, defaults to 0\n#out // the end offset to draw, defaults to buffer.length\n#positive // the positive color space value, any CSS color string\n#negative // the negative color space value, ibid.\n#bg // the main bg gradient color, css color string. Blends to white.\n#x // the x xoordinate on the canvas to start at, defaults to 0\n#y // ibid for y-coordinate, defaults to 0, these allow the illustration to be offset in a larger convas\n#width // width of the visual, defualts to width of canvas\n#height // height, defaults to height of canvas\n\n## Example\n\nTo run the example in this repo, you need to use Browserify with BRFS, or just use [opa](https://github.com/nhq/opa)\n\ndo:\n```\nnpm install -g browserify opa\n```\nthere are a few example files, to run them, try:\n```\ngit clone git@github.com:NHQ/jsynth-waveform.git\ncd jsynth-waveform\nopa -e ex2.js -n // open localhost:11001\n```\nex1.js needs jsynth-file-sample.\n\n```\nnpm install jsynth-file-saple\n```\n",
+  "_id": "jsynth-waveform@1.0.0",
+  "dist": {
+    "shasum": "53639d9396b21c7b38c9720b3a57ae31bfe00af5",
+    "tarball": "http://registry.npmjs.org/jsynth-waveform/-/jsynth-waveform-1.0.0.tgz"
+  },
+  "_from": "jsynth-waveform@",
+  "_npmVersion": "1.2.11",
+  "_npmUser": {
+    "name": "johnnyscript",
+    "email": "mostmodernist@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "johnnyscript",
+      "email": "mostmodernist@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_shasum": "53639d9396b21c7b38c9720b3a57ae31bfe00af5",
+  "_resolved": "https://registry.npmjs.org/jsynth-waveform/-/jsynth-waveform-1.0.0.tgz"
+}
